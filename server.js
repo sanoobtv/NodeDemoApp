@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://admin:Tnp4ydaf@ds123331.mlab.com:23331/star-wars'
 
 	if (err) return console.log(err)
 	db=database
-	app.listen(3000,function() { console.log ('listening on 3000')})
+	app.listen(process.env.PORT || 3000,function() { console.log ('listening on 3000')})
 
 })
 

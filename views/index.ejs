@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Node App</title>
+
+</head>
+<body>
+
+
+<ul class="quotes w3-ul">
+  <% for (var i=0; i<quotes.length;i++){ %>
+    <li class="quote">
+      <div class="w3-panel w3-card-4 w3-light-grey" style="width:50%">
+      <span><%= quotes[i].name %></span></br>
+      <span class="fa fa-quote-right w3-text-red"><%= quotes[i].quote %></span>
+    </li>
+    <% } %>
+  </ul>
+
+
+  <form action="/quotes" method="POST" class="w3-container w3-teal">
+  <input type="text" name="name" placeholder="name" required="" class="w3-input w3-border w3-round w3-hover-red" >
+  <input type="text" name="quote" placeholder="quote" required="" class="w3-input  w3-border w3-round w3-hover-grey">
+  <button type="submit" class="w3-btn w3-red">SUBMIT</button>
+  </form>
+
+  </body>
+  </html>

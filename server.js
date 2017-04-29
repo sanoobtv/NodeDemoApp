@@ -2,7 +2,7 @@
 console.log('node be with u')
 //
 const express = require('express');
-const bodyParser= require('body-Parser');
+const bodyParser= require('body-parser');
 const app=express();
 app.set('view engine','ejs')
 var db

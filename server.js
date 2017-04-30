@@ -4,6 +4,8 @@ console.log('node be with u')
 const express = require('express');
 const bodyParser= require('body-parser');
 const app=express();
+express.static
+app.use(express.static('public'))
 app.set('view engine','ejs')
 var db
 const MongoClient = require('mongodb').MongoClient

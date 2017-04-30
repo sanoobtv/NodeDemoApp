@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="main.js"></script>
+
 <title>Node App</title>
 
 </head>
 <body>
 
 
-<ul class="quotes w3-ul">
+<ul class="quotes w3-ul w3-center">
   <% for (var i=0; i<quotes.length;i++){ %>
-    <li class="quote">
+    <li class="quote  w3-center">
       <div class="w3-panel w3-card-4 w3-light-grey" style="width:50%">
       <span><%= quotes[i].name %></span></br>
       <span class="fa fa-quote-right w3-text-red"><%= quotes[i].quote %></span>
@@ -32,6 +32,6 @@
 <h3 > Join Dark Side</h3>
 <button id="update" class="w3-ripple w3-btn w3-teal w3-round" >Change</button>
 </div>
-
+<script src="main.js"></script>
   </body>
   </html>

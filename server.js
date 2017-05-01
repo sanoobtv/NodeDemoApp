@@ -45,6 +45,14 @@ app.put('/quotes', (req, res) => {
   })
 })
 
+app.delete('/quotes', (req,res) => {
+	db.collection('quotes').findOneAndDelete ({ _id:req.body._id},
+	(err,result) => {
+		if(err) return res.send(500,err)
+		res.send('Quote was removed')
+	})
+	})
+
 app.post('/quotes', (req,res) =>
 	 {
 		console.log('You just pressed a button')
@@ -55,4 +63,5 @@ app.post('/quotes', (req,res) =>
 			res.redirect('/')
 		}) })
 	
+
 

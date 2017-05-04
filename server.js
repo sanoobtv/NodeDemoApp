@@ -21,15 +21,15 @@ MongoClient.connect('mongodb://admin:Tnp4ydaf@ds123331.mlab.com:23331/star-wars'
 app.use(bodyParser.urlencoded({extended: true}))
 app.get('/', function (req,res)
 	{
-		db.collection('quotes').find().toArray((err,result) =>
-{
+		db.collection('quotes').find().toArray((err,result) => {
 if(err) return console.log(err)
 res.render('index.ejs',{quotes:result})
 
 })
 	})
 
-app.put('/quotes', (req, res) => {
+app.put('/quotes', (req, res) => 
+{
   db.collection('quotes')
   .findOneAndUpdate({name: 'Yoda'}, {
     $set: {
@@ -45,22 +45,28 @@ app.put('/quotes', (req, res) => {
   })
 })
 
-app.delete('/quotes', (req,res) => {
-	db.collection('quotes').findOneAndDelete ({ _id:req.body._id},
-	(err,result) => {
-		if(err) return res.send(500,err)
+app.delete('/quotes', (req,res) =>
+ {
+ 	var  mid=require('mongodb').ObjectID(req.body._id);
+ 	console.log(req.body)
+ 	
+	db.collection('quotes')	.findOneAndDelete ({ _id: mid},	(err,result) => {
+		if(err) 
+			return res.send(500,err)
 		res.send('Quote was removed')
+
+
 	})
 	})
 
 app.post('/quotes', (req,res) =>
-	 {
-		console.log('You just pressed a button')
+ {
+		//console.log('You just pressed a button')
 		console.log(req.body)
 		db.collection('quotes').save(req.body, (err,result) => {
 			if(err) return console.log(err)
 			console.log("Record Added to DB")
-			res.redirect('/')
+			res.redirect('/index.ejs')
 		}) })
 	
 

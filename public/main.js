@@ -19,14 +19,14 @@ update.addEventListener('click', function () {
   window.location.reload()
 })
 	
-	function delfunction(id)
+	function delfunction(_id)
 	{
-		alert(id)
+		
 fetch('quotes', {
 method: 'delete',
 headers: {'Content-Type':'application/json'},
 body: JSON.stringify({
-	'_id': id
+	'_id': _id
 
 })
 })
@@ -36,7 +36,9 @@ body: JSON.stringify({
 	})
 	.then(data => { 
 		console.log(data)
+		window.location.reload(true)
 				
-})
-window.location.reload()
+})   
+
+
 	}

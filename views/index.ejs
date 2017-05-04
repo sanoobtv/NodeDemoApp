@@ -20,7 +20,8 @@
       <div class="w3-panel w3-card-4 w3-light-grey" >
       <!--p  style="display: none" type="hidden" id="id" name="id"><%= quotes[i]._id %></p-->
        <span class="fa fa-quote-right" name="name" ><%= quotes[i].name %></span></br>
-      <span class="w3-text-red ui-btn ui-icon-delete ui-btn-icon-left " name="delquote" onclick="delfunction('<%= quotes[i]._id %>')"> <%= quotes[i].quote %></span>
+      <span class="w3-text-red ui-btn ui-icon-delete ui-btn-icon-left " name="delquote"
+       onclick="delfunction('<%= quotes[i]._id %>')"> <%= quotes[i].quote %></span>
       </div>
     </li>
     <% } %>
